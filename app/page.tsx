@@ -27,7 +27,9 @@ export default function Home() {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}`);
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/countries/available`
+        );
         setCountries(response.data);
         setIsLoading(false);
       } catch (error) {
